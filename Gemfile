@@ -43,3 +43,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# based on the location 132 of the .mobi book Riding Rails with AngularJS
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'uuidtools'
