@@ -3,6 +3,9 @@ defaults: &defaults
     clientId: "CONSUMERKEY"
     clientSecret: "CONSUMERSECRET"
 
-development: <<: *defaults
-test: <<: *defaults
-production: <<: *defaults
+development: 
+  <<: *defaults
+test: 
+  <<: *defaults
+production: 
+  <<: *defaults
