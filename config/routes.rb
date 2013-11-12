@@ -17,7 +17,9 @@ Shareup::Application.routes.draw do
 
   # fetch current user session via api
   devise_scope:user do
-    get '/api/current_user' => 'users/sessions#show_current_user'
+    get '/api/current_user' => 'users/sessions#show_current_user', as: 'show_curren\
+t_user'
+    post '/api/check/is_user' => 'users/users#is_user', as: 'is_user'
   end
 
   # Example of regular route:
