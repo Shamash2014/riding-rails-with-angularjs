@@ -15,6 +15,11 @@ Shareup::Application.routes.draw do
   get'/dashboard'=>'welcome#dashboard'
   root to:'welcome#index'
 
+  # fetch current user session via api
+  devise_scope:user do
+    get '/api/current_user' => 'users/sessions#show_current_user'
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
