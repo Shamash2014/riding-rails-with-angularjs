@@ -49,3 +49,13 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'uuidtools'
+
+# angularjs-rails
+gem 'angularjs-rails','>=1.2.0.rc1'
+# pre-minifier
+gem 'ngmin-rails'
+
+# For Twitter's Bootstrap
+gem 'bootstrap-sass-rails'
+# or for Zurb Foundation
+gem 'zurb-foundation'
