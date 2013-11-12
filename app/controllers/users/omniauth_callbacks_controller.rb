@@ -10,10 +10,11 @@ class Users::OmniauthCallbacksController  < Devise::OmniauthCallbacksController
     else
     ## Is a user signed in already? If not, then find or create # the user
       unless current_user
-        unless user = User.find_by_name(name) user = User.create({
-          name: name,
-          password: Devise.friendly_token[0,8],
-          email: "#{UUIDTools::UUID.random_create}@shareup.com"
+        unless user = User.find_by_name(name)
+          user = User.create({
+            name: name,
+            password: Devise.friendly_token[0,8],
+            email: "#{UUIDTools::UUID.random_create}@shareup.com"
           })
         end
       else
