@@ -20,4 +20,6 @@ angular.module('myApp.services',[])
     }
   };
   return service; 
-});
+})
+.factory('Share',function($resource){ })
+.factory("SessionService",function(){ });
