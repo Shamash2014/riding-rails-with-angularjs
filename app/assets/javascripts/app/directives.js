@@ -37,6 +37,7 @@ angular.module('myApp.directives',[])
     // If it is a user, then our field will be valid, if it's not
     // check if the input is an email
       scope.$watch(attrs.ngModel, function(v) { 
+        if (!v) return;
         if (checking) clearTimeout(checking);
 
         var value = scope.ngModel.$viewValue;
