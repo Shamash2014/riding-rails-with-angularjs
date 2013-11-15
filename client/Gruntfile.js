@@ -76,6 +76,14 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
+          middleware: function (connect) { 
+            return [
+              proxySnippet,
+              lrSnippet,
+              mountFolder(connect, '.tmp'),
+              mountFolder(connect, yeomanConfig.app)
+            ];
+          },
           open: true,
           base: [
             '.tmp',
