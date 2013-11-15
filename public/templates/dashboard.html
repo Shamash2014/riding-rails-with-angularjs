@@ -23,9 +23,9 @@
         data-ng-repeat="article in articles | orderBy:publishedDate:false">
         <div class="article-listing">
           <div class="large-10 small-10 columns">
-            <h2><a href="{{ ngModel.link }}" title="{{ ngModel.title }}"> {{ ngModel.title }}</a></h2>
+            <h2><a href="{{ article.link }}" title="{{ article.title }}"> {{ article.title }}</a></h2>
             <p>
-              {{ ngModel.publishedDate | date:'M/d/yy h:mm:ss a' }}
+              {{ article.publishedDate | date:'M/d/yy h:mm:ss a' }}
             </p>
           </div><!-- end of small-10 columns -->
 
