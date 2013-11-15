@@ -6,6 +6,11 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
+var lrSnippet = require('connect-livereload')({port:LIVERELOAD_PORT}); 
+var mountFolder = function(connect,dir) {
+  return connect.static(require('path').resolve(dir)); 
+};
+var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
 
 module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
