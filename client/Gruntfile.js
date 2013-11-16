@@ -6,6 +6,7 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
+var LIVERELOAD_PORT = 3001;
 var lrSnippet = require('connect-livereload')({port:LIVERELOAD_PORT}); 
 var mountFolder = function(connect,dir) {
   return connect.static(require('path').resolve(dir)); 
@@ -64,7 +65,7 @@ module.exports = function (grunt) {
     },
     connect: {
       options: {
-        port: 9000,
+        port: 9002,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -81,7 +82,7 @@ module.exports = function (grunt) {
               proxySnippet,
               lrSnippet,
               mountFolder(connect, '.tmp'),
-              mountFolder(connect, yeomanConfig.app)
+              mountFolder(connect, '<%= yeoman.app %>')
             ];
           },
           open: true,
